@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metro bus tacketing</title>
+</head>
+<style>
+    *{
+        padding:0;
+        margin:0;
+        box-sizing: border-box;
+    }
+    .container{
+        width:70%;
+        height:70vh;
+        display:flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+        margin:0 auto;
+    }
+    .main-div{
+        width:300px;
+        height:200px;
+        border:1px solid black;
+        text-align:center;
+        padding-top: 30px;
+        margin-top:20px;
+
+         
+    }
+    button{
+        padding:8px 30px;
+        background:black;
+        color:rgb(228, 228, 228);
+        cursor:pointer;
+        margin-top:2px;
+    }
+    button:hover{
+        background:white;
+        color:rgb(16, 16, 16);
+    }
+</style>
+<body>
+    <div class="container">
+          <h1>Project of Metro Bus Discount tacketing</h1>
+        <div class="main-div" id="data-div">
+
+        </div>
+        <button type="button" id="btn">Click me</button>
+    </div>
+    
+    <script>
+           // project of Discount "metro bus tacketing" 
+
+     document.getElementById("btn").onclick = function(){
+
+         let age= +prompt("Enter your age");
+         let gender= prompt("Enter your gender");      // male and female
+         let finalDiscount;
+        if(age<=5){
+            finalDiscount = 100;
+            document.getElementById("data-div").innerHTML=(`You have Full Discount ${finalDiscount}`);
+        }
+        else if( gender === 'female' || age<=8 && age>5){
+            finalDiscount = 30;
+           document.getElementById("data-div").innerHTML=(`You have Full Discount ${finalDiscount}`);
+        }
+        else if(age>=18 && age<=64){
+            finalDiscount = 0;
+            document.getElementById("data-div").innerHTML=(`You have Full Discount ${finalDiscount}`); 
+        }
+        else if(age>=65 && age<=64 || gender ==="female" || gender === "male" || gender === "transgender") {
+            finalDiscount = 50;
+            document.getElementById("data-div").innerHTML=(`You have Full Discount ${finalDiscount}`);
+        }
+        else{
+            finalDiscount = 1;
+            document.getElementById("data-div").innerHTML=(`You have Full Discount ${finalDiscount}`);
+        }
+    }
+    </script>
+</body>
+
+</html>
